@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       # custom routes
       get '/get-current-user', to: 'users#get_current_user'
       post '/signup', to: 'users#create'
+      post '/login', to: 'sessions#create'
+      delete '/logout', to: 'sessions#destroy'
 
       resources :products
     end
