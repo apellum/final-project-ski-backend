@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  resources :transaction_products
+  resources :transactions
   namespace :api do
     namespace :v1 do
       resources :users, except: [:create]
+      resources :customers do 
+        resources :users
+      end
       
       # custom routes
       get '/get-current-user', to: 'users#get_current_user'
