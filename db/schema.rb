@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_213641) do
+ActiveRecord::Schema.define(version: 2021_10_20_213407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,15 +36,6 @@ ActiveRecord::Schema.define(version: 2021_10_20_213641) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "transaction_products", force: :cascade do |t|
-    t.bigint "transaction_id", null: false
-    t.bigint "product_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["product_id"], name: "index_transaction_products_on_product_id"
-    t.index ["transaction_id"], name: "index_transaction_products_on_transaction_id"
-  end
-
   create_table "transactions", force: :cascade do |t|
     t.float "total"
     t.datetime "date"
@@ -68,8 +59,6 @@ ActiveRecord::Schema.define(version: 2021_10_20_213641) do
   end
 
   add_foreign_key "customers", "users"
-  add_foreign_key "transaction_products", "products"
-  add_foreign_key "transaction_products", "transactions"
   add_foreign_key "transactions", "customers"
   add_foreign_key "transactions", "users"
 end

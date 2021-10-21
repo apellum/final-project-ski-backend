@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  resources :transaction_products
-  resources :transactions
   namespace :api do
     namespace :v1 do
       resources :users, except: [:create]
       resources :customers do 
         resources :users
       end
+      resources :transactions
+      resources :transaction_products
+      resources :products
       
       # custom routes
       get '/get-current-user', to: 'users#get_current_user'
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
       post '/login', to: 'sessions#create'
       delete '/logout', to: 'sessions#destroy'
 
-      resources :products
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

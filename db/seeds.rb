@@ -16,3 +16,8 @@ User.create(email: "t@test.com", first_name: "Tester", last_name: "Test", date_o
 
 Customer.create(first_name: "Drew", last_name: "Pellum", date_of_birth: "30/02/1999", address: "4 Privet Dr. Johnson, TN", phone_number: "7655677765", email: "drew@drewsome.com", user_id: 3)
 
+Transaction.create(total: 900, date: 21/10/2021, user_id: 3, customer_id: 1)
+
+TransactionProduct.create(product_id: 1, transaction_id: 1)
+TransactionProduct.create(product_id: 2, transaction_id: 1)
+
