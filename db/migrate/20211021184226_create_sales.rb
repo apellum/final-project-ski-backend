@@ -1,6 +1,6 @@
-class CreateTransactions < ActiveRecord::Migration[6.1]
+class CreateSales < ActiveRecord::Migration[6.1]
   def change
-    create_table :transactions do |t|
+    create_table :sales do |t|
       t.float :total
       t.datetime :date
       t.belongs_to :user, null: false, foreign_key: true

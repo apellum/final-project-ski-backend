@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-    has_many :transaction_products
-    has_many :transactions, through: :transaction_products
+    has_many :sale_products
+    has_many :sales, through: :sale_products
 end

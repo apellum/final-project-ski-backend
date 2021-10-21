@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       resources :customers do 
         resources :users
       end
-      resources :transactions
-      resources :transaction_products
+      resources :sales
+      resources :sale_products
       resources :products
       
       # custom routes
