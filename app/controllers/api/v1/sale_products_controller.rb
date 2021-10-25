@@ -1,4 +1,5 @@
 class Api::V1::SaleProductsController < ApplicationController
+  skip_before_action :authorized
   before_action :set_sale_product, only: [:show, :update, :destroy]
 
   # GET /sale_products

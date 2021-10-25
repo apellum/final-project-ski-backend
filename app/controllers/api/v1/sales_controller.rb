@@ -1,4 +1,5 @@
 class Api::V1::SalesController < ApplicationController
+  skip_before_action :authorized
   before_action :set_sale, only: [:show, :update, :destroy]
 
   # GET /sales
@@ -18,7 +19,7 @@ class Api::V1::SalesController < ApplicationController
     @sale = Sale.new(sale_params)
 
     if @sale.save
-      render json: @sale, status: :created, location: @sale
+      render json: @sale, status: :created
     else
       render json: @sale.errors, status: :unprocessable_entity
     end

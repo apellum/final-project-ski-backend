@@ -38,4 +38,12 @@ class ApplicationController < ActionController::API
     def authorized
         render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end
+
+    def customer_selected?
+        !!current_customer
+    end
+
+    def current_customer
+        @customer = Customer.find_by(id: customer_id)
+    end
 end

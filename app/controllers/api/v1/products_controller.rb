@@ -5,7 +5,7 @@ class Api::V1::ProductsController < ApplicationController
   # GET /products
   def index
     @products = Product.all
-    render json: @products, include: [:transactions]
+    render json: @products, include: [:sales]
   end
 
   # GET /products/1
