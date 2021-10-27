@@ -16,8 +16,9 @@ User.create(email: "t@test.com", first_name: "Tester", last_name: "Test", date_o
 
 Customer.create(first_name: "Drew", last_name: "Pellum", date_of_birth: "30/02/1999", address: "4 Privet Dr. Johnson, TN", phone_number: "7655677765", email: "drew@drewsome.com", user_id: 3)
 
-Sale.create(total: 900, date: 21/10/2021, user_id: 3, customer_id: 1)
+sale = Sale.create(total: 900, date: 21/10/2021, user_id: 3, customer_id: 1, product_ids: [1,3])
+sale = Sale.create(total: 400, date: 21/10/2021, user_id: 3, customer_id: 2, product_ids: [1])
 
-SaleProduct.create(product_id: 1, sale_id: 1)
-SaleProduct.create(product_id: 2, sale_id: 1)
+# SaleProduct.create(product_id: 1, sale_id: 1)
+# SaleProduct.create(product_id: 2, sale_id: 1)
 

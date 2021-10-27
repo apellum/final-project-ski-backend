@@ -16,9 +16,8 @@ class Api::V1::SalesController < ApplicationController
 
   # POST /sales
   def create
-    @sale = Sale.new(sale_params)
-
-    if @sale.save
+    @sale = Sale.create(sale_params)
+    if @sale.valid?
       render json: @sale, status: :created
     else
       render json: @sale.errors, status: :unprocessable_entity
@@ -47,6 +46,7 @@ class Api::V1::SalesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sale_params
-      params.require(:sale).permit(:total, :date, :user_id, :customer_id)
+      params.permit(:total, :date, :user_id, :customer_id, product_ids: [])
     end
+    
 end
