@@ -39,6 +39,14 @@ class Api::V1::CustomersController < ApplicationController
     @customer.destroy
   end
 
+  def get_current_customer
+    if customer_selected?
+      render json: current_customer, status: :ok
+    else
+      render json: { message: ["No Customer Selected"]}, status: :ok
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer
