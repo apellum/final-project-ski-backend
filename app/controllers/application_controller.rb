@@ -46,4 +46,5 @@ class ApplicationController < ActionController::API
     def current_customer
         @customer = Customer.find_by(id: customer_id)
     end
+
 end

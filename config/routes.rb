@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, except: [:create]
       resources :customers do 
+        resources :sales, only: [:index]
         resources :users
       end
       resources :sales
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       
       # custom routes
       get '/get-current-user', to: 'users#get_current_user'
+      get '/get-current-customer', to: 'users#get_current_customer'
       post '/signup', to: 'users#create'
       post '/login', to: 'sessions#create'
       delete '/logout', to: 'sessions#destroy'
