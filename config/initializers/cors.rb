@@ -4,11 +4,11 @@
 # Handle Cross-Origin Resource Sharing (CORS) in order to accept cross-origin AJAX requests.
 
 # Read more: https://github.com/cyu/rack-cors
+# origins 'localhost:3002'
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://resort-booker.herokuapp.com'
-    # origins 'localhost:3002'
+    origins "resort-booker.herokuapp.com"
 
     resource '*',
       headers: :any,
