@@ -4,8 +4,9 @@ class Api::V1::SalesController < ApplicationController
 
   # GET /sales
   def index
-    @sales = Sale.all
-
+    binding.pry
+    @customer = Customer.find_by(id: params[:customer_id])
+    @sales = @customer.sales
     render json: @sales
   end
 

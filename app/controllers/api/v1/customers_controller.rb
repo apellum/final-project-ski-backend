@@ -5,7 +5,6 @@ class Api::V1::CustomersController < ApplicationController
   # GET /customers
   def index
     @customers = Customer.all
-
     render json: @customers
   end
 
