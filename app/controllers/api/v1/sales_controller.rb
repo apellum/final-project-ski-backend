@@ -4,10 +4,13 @@ class Api::V1::SalesController < ApplicationController
 
   # GET /sales
   def index
-    binding.pry
     @customer = Customer.find_by(id: params[:customer_id])
-    @sales = @customer.sales
-    render json: @sales
+    if @customer 
+      @sales = @customer.sales
+      render json: @sales
+    else
+      render json: { error: "No Customer"}
+    end
   end
 
   # GET /sales/1
@@ -23,20 +26,6 @@ class Api::V1::SalesController < ApplicationController
     else
       render json: @sale.errors, status: :unprocessable_entity
     end
-  end
-
-  # PATCH/PUT /sales/1
-  def update
-    if @sale.update(sale_params)
-      render json: @sale
-    else
-      render json: @sale.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /sales/1
-  def destroy
-    @sale.destroy
   end
 
   private
