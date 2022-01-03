@@ -13,6 +13,7 @@ Product.create(name: "Lift Ticket - 1/2 Day", category: "Lift Ticket", price: 60
 User.create(email: "test@test.com", first_name: "test", last_name: "testerson", date_of_birth: "10/10/1990", password: "testing123", admin: false )
 User.create(email: "drew@test.com", first_name: "Drew", last_name: "Drew", date_of_birth: "23/10/1994", password: "drew", admin: true )
 User.create(email: "t@test.com", first_name: "Tester", last_name: "Test", date_of_birth: "10/01/1977", password: "t", admin: false )
+User.create(email: "employee@resortbooker.com", first_name: "Employee", last_name: "Account", date_of_birth: "10/11/1977", password: "employee", admin: false )
 
 Customer.create(first_name: "Drew", last_name: "Pellum", date_of_birth: "30/02/1999", address: "4 Privet Dr. Johnson, TN", phone_number: "7655677765", email: "drew@drewsome.com", user_id: 3)
 
